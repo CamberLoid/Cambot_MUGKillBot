@@ -2,7 +2,7 @@
 
 ## 功能/Todo
 
-这个branch是专门为Arcaea打造的 -> [@HikariissoKawaiiBot](https://t.me/HikariissoKawaiiBot) ,目前正在开发中
+这个branch是专门为Arcaea打造的 -> [@HikariissoKawaiiBot](https://t.me/HikariissoKawaiiBot) ,目前正在开发中(请不要吐槽头像)
 
 Todo: 我还没写完这个bot，成绩的动态记录&更新，token有效期，token本地存储加密
 Todo/Global: CytusII + OCR
