@@ -14,4 +14,6 @@
 
 其次，你需要pip，别问我pip是什么
 
-然后，你需要下载这些东西 `pip install requests`
+然后，你需要下载这些东西 requests和telepot(之后会改为自造轮)
+
+没有了，真的
