@@ -2,7 +2,7 @@
 
 ## 功能/Todo
 
-这个branch是专门为Arcaea打造的 -> [https://t.me/HikariissoKawaiiBot](@HikariissoKawaiiBot) ,目前正在开发中
+这个branch是专门为Arcaea打造的 -> [@HikariissoKawaiiBot](https://t.me/HikariissoKawaiiBot) ,目前正在开发中
 
 ## 这个bot应该就是大概要正式推出的bot了
 
