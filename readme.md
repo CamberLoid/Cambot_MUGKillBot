@@ -2,7 +2,7 @@
 
 ## 功能/Todo
 
-这个branch是专门为Arcaea打造的 -> [https://t.me/HikariissoKawaiiBot](@HikariissoKawaiiBot) ,目前正在开发中
+这个branch是专门为Arcaea打造的 -> [@HikariissoKawaiiBot](https://t.me/HikariissoKawaiiBot) ,目前正在开发中
 
 ## 这个bot应该就是大概要正式推出的bot了
 
@@ -14,4 +14,6 @@
 
 其次，你需要pip，别问我pip是什么
 
-然后，你需要下载这些东西 `pip install requests`
+然后，你需要下载这些东西 requests和telepot(之后会改为自造轮)
+
+没有了，真的
