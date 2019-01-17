@@ -1,10 +1,8 @@
-# Cambot/MUGKillBot 大概是音游课题记录
+# Cambot/MUGKillBot.arcaea arcaea自动机
 
 ## 功能/Todo
 
-目前计划制作你群(指cy---ss)主流的CytusII(File+OCR)和Arcaea(API)的识别，之后大概会动用上Tesseract
-
-TODO/总之就是做比较好做的: Dynamix(识别外文成谜)，Lanota，Muse Dash，开放代码，数据库
+这个branch是专门为Arcaea打造的 -> [https://t.me/HikariissoKawaiiBot](@HikariissoKawaiiBot) ,目前正在开发中
 
 ## 这个bot应该就是大概要正式推出的bot了
 
@@ -16,6 +14,4 @@ TODO/总之就是做比较好做的: Dynamix(识别外文成谜)，Lanota，Muse
 
 其次，你需要pip，别问我pip是什么
 
-然后，你需要下载这些东西
-`pip install requests`
-没了 轮子靠手造
+然后，你需要下载这些东西 `pip install requests`
