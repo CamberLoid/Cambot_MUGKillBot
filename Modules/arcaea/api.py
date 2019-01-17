@@ -10,8 +10,9 @@ props = json.load(open('arc.json',encoding='UTF-8'))
 from exceptions import *
 """
     Cambot.modules.arcaea.api
-    模块化bot框架 Cambot 的音游接入口之一
+    模块化bot框架<TODO> Cambot 的音游接入口之一
     大概是我第一个做出来的可自动导入模块
+    <TODO>更加完整的url
 """
 class Data(object):
     def __init__(self,auth=None,cred=None,pswd=None,**kwargs):
