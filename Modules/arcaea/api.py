@@ -16,12 +16,19 @@ from exceptions import *
 """
 class Data(object):
     def __init__(self,auth=None,cred=None,pswd=None,**kwargs):
-        self._auth=auth
+        self._auth = auth
         if self._auth is None:
             self._auth = self.getAuth(cred,pswd)
+        raw = self.Datafetch()
+        self._arcid = raw['user_code']
+        self._arcdisplay_name = raw['display_name']
         #pprint(self.Datafetch())    
     @classmethod
     def getAuth(cls,cred,pswd):
+        """
+        在没有auth或auth过期的时候，使用该方法获取bearer auth
+        该方法不存储用户敏感数据
+        """
         toencode = cred+":"+pswd
         headers = {
               'Authorization': 'Basic ' + b64encode(
@@ -35,6 +42,9 @@ class Data(object):
         else:
             raise invalidCredException()
     def Datafetch(self):
+        """
+        普通的拉取数据
+        """
         headers = {}
         headers["authorization"] = "Bearer "+ self._auth
         r=requests.get(arcapi,headers=headers)
@@ -45,32 +55,34 @@ class Data(object):
     def getRecent(self,tgUser):
         raw=self.Datafetch()
         recent=raw['recent_score'][0]
-        reply = """用户 {}/{}(Arcaea)
+        reply = \
+"""用户 {}/{}(Arcaea)
 目前PTT为 {}
 拉取的最后一次游戏数据为：
 {} - {}
-Score:   {}
-Perfect: {}({})
-Far:     {}
-Miss:    {}""".format(tgUser,raw['display_name'],raw['rating']/100,props['difficulty'][recent['difficulty']],recent['song_id'],recent['score'],recent['perfect_count'],recent['shiny_perfect_count'],recent['near_count'],recent['miss_count'])
+Score:    {}
+Pure(+1): {}({})
+Far:      {}
+Lost:     {}""".format(tgUser,raw['display_name'],raw['rating']/100,props['difficulty'][recent['difficulty']],recent['song_id'],recent['score'],recent['perfect_count'],recent['shiny_perfect_count'],recent['near_count'],recent['miss_count'])
         return reply
-        pass
+        
     def getFriendRecent(self,friendID=None):
         raw=self.Datafetch()
         for f in raw['friends']:
             if f['name']==friendID or f['user_id']==friendID:
                 recent = f['recent_score'][0]
-                reply = """玩家 {}(Arcaea)
+                reply = \
+"""玩家 {}(Arcaea)(好友关系)
 目前PTT为 {}
 拉取的最后一次游戏数据为：
 {} - {}
-Score:   {}
-Perfect: {}({})
-Far:     {}
-Miss:    {}""".format(f['name'],f['rating']/100,props['difficulty'][recent['difficulty']],recent['song_id'],recent['score'],recent['perfect_count'],recent['shiny_perfect_count'],recent['near_count'],recent['miss_count'])
+Score:    {}
+Pure(+1): {}({})
+Far:      {}
+Lost:     {}""".format(f['name'],f['rating']/100,props['difficulty'][recent['difficulty']],recent['song_id'],recent['score'],recent['perfect_count'],recent['shiny_perfect_count'],recent['near_count'],recent['miss_count'])
                 return reply
         return "TA还不是你的好友哦，请先加TA为好友"
     def getFriendCode(self):
-        raw=self.Datafetch()
-        return int(raw['user_code'])
-    
+        return self._arcid
+    async def listen(self,timeout=1200):
+        pass

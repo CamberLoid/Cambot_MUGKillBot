@@ -1,10 +1,13 @@
-{
-    "data" : [
-        {
-            "user_id": 123456789,
-            "arc_user": "Example",
-            "arc_id": 987654321,
-            "bearer": "kjsdKJBKJDkjjkdbjx BJBKJ"
-        }
-    ]
-}
+[
+    {
+        "user_id": 123456789,
+        "username": "BrainPower",
+        "arc_user": "Example",
+        "arc_id": 987654321,
+        "bearer": "kjsdKJBKJDkjjkdbjx BJBKJ",
+        "registed_to": [-13141512525,-259374748959382]
+    },
+    {
+
+    }
+]

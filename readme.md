@@ -5,10 +5,11 @@
 这个branch是专门为Arcaea打造的 -> [@HikariissoKawaiiBot](https://t.me/HikariissoKawaiiBot) ,目前正在开发中
 
 Todo: 我还没写完这个bot，成绩的动态记录&更新，token有效期，token本地存储加密
+Todo/Global: CytusII + OCR
 
 ## 这个bot应该就是大概要正式推出的bot了
 
-还想着上一个杀人bot怎么写，结果想着想着变成了课题记录，晕。
+还想着上一个杀人bot怎么写，结果想着想着变成了课题记录，晕。（划掉）已经能杀人了
 
 ## 怎么用呢？
 
@@ -16,6 +17,12 @@ Todo: 我还没写完这个bot，成绩的动态记录&更新，token有效期�
 
 其次，你需要pip，别问我pip是什么
 
-然后，你需要下载这些东西 requests和telepot(之后会改为自造轮)
+然后，你需要下载这些东西 requests(为什么:暂时不会用aiohttp)和telepot(裸API，之后会改为自造轮)
 
-没有了，真的
+之后写多了还会有的，但是现在真的没有了，真的
+
+## Docs
+
+### userDatas.json/userDatasExample.json
+
+### botCore
