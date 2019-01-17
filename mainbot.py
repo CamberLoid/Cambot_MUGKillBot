@@ -23,9 +23,11 @@ async def register(msg, *args, **kwargs):
         else: return "指令格式不合法"
     except invalidCredException: return "id或者密钥不正确"
     except 
-    return "**非常重要的信息**\n\n这个bot所使用的api是从lowiro网站上扒下来的\nlowiro官方未公布这个api\n过度使用有各种风险(我也不知道)\n基于MIT协议，开发者不对使用bot产生的后果负责\n如理解则请按照下文方法操作：\n1./register basic <your_id> <password>\n2./register bearer <your_auth>\n\n\n本Bot不会保存上述basic方法的id和密码\n当auth过期时请重新执行一遍这个方法"
+    return "**非常重要的信息**\n\n这个bot所使用的api是从lowiro网站上扒下来的\nlowiro官方未公布这个api\n过度使用有各种风险(我也不知道有什么)\n基于MIT协议(口胡)，开发者不对使用bot产生的后果负责\n如理解则请按照下文方法操作：\n1./register basic <your_id> <password>\n2./register bearer <your_auth>\n\n\n本Bot不会保存上述basic方法的id和密码\n当auth过期时请重新执行一遍这个方法"
     pass
 async def show(msg, *args, **kwargs):
+    pass
+def about():
     pass
 def start(msg):
     return 
