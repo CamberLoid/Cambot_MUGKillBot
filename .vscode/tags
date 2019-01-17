@@ -1,0 +1,28 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/45968eff/
+Bot	../mainbot.py	/^Bot = telepot.Bot(token)/;"	kind:variable	line:12
+Data	../Modules/arcaea/api.py	/^class Data(object):$/;"	kind:class	line:9
+Datafetch	../Modules/arcaea/api.py	/^    def Datafetch(self,auth):$/;"	kind:member	line:29
+__author__	../botCore/jsonHandle.py	/^__author__ = 'Camber'$/;"	kind:variable	line:10
+__init__	../Modules/arcaea/api.py	/^    def __init__(self,**kwargs):$/;"	kind:member	line:10
+__init__	../botCore/__init__.py	/^    def __init__(self,token):$/;"	kind:member	line:14
+__init__	../botCore/jsonHandle.py	/^    def __init__(self,path='.\/userDatas.json'):$/;"	kind:member	line:13
+__init__.py	../botCore/__init__.py	1;"	kind:file	line:1
+api.py	../Modules/arcaea/api.py	1;"	kind:file	line:1
+arcapi	../Modules/arcaea/api.py	/^arcapi = "https:\/\/arcapi.lowiro.com\/4\/user\/me"$/;"	kind:variable	line:8
+arcauth	../Modules/arcaea/api.py	/^arcauth = "https:\/\/arcapi.lowiro.com\/4\/auth\/login"$/;"	kind:variable	line:7
+bot	../botCore/__init__.py	/^class bot(object):$/;"	kind:class	line:10
+getAuth	../Modules/arcaea/api.py	/^    def getAuth(cred,pswd):$/;"	kind:member	line:16
+getRecent	../Modules/arcaea/api.py	/^    def getRecent(self):$/;"	kind:member	line:35
+jsonHandle.py	../botCore/jsonHandle.py	1;"	kind:file	line:1
+jsonHandler	../botCore/jsonHandle.py	/^class jsonHandler(object):$/;"	kind:class	line:12
+mainbot.py	../mainbot.py	1;"	kind:file	line:1
+ocr.py	../Modules/cytusii/ocr.py	1;"	kind:file	line:1
+scheduler	../botCore/__init__.py	/^    class scheduler(threading.Thread):$/;"	kind:class	line:11
+test.py	../test.py	1;"	kind:file	line:1
+token	../mainbot.py	/^token = sys.argv[1]$/;"	kind:variable	line:11

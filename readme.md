@@ -1,4 +1,4 @@
-# Cambot/MUGScoreUpdater 大概是音游课题记录
+# Cambot/MUGKillBot 大概是音游课题记录
 
 ## 功能/Todo
 
