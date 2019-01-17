@@ -4,6 +4,8 @@
 
 这个branch是专门为Arcaea打造的 -> [@HikariissoKawaiiBot](https://t.me/HikariissoKawaiiBot) ,目前正在开发中
 
+Todo: 我还没写完这个bot
+
 ## 这个bot应该就是大概要正式推出的bot了
 
 还想着上一个杀人bot怎么写，结果想着想着变成了课题记录，晕。
