@@ -1,5 +1,5 @@
-.test.py
-.userDatas.json
+test.py
+userDatas.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -115,3 +115,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+userDatas.json

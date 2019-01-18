@@ -7,7 +7,7 @@ import json
 arcauth = "https://arcapi.lowiro.com/4/auth/login"
 arcapi = "https://arcapi.lowiro.com/4/user/me"
 props = json.load(open('arc.json',encoding='UTF-8'))
-from exceptions import *
+from . import exceptions
 """
     Cambot.modules.arcaea.api
     模块化bot框架<TODO> Cambot 的音游接入口之一
@@ -40,7 +40,7 @@ class Data(object):
         if po.json()['success']==True:  
             return po.json()['access_token']
         else:
-            raise invalidCredException()
+            raise exceptions.invalidCredException()
     def Datafetch(self):
         """
         普通的拉取数据
@@ -50,13 +50,13 @@ class Data(object):
         r=requests.get(arcapi,headers=headers)
         r.raise_for_status()
         if r.json()['success']==False:
-            raise badAuthException('Auth is Expired')
+            raise exceptions.badAuthException('Auth is Expired')
         return r.json()['value']
-    def getRecent(self,tgUser):
+    def getRecent(self,tgUser=None):
         raw=self.Datafetch()
         recent=raw['recent_score'][0]
         reply = \
-"""用户 {}/{}(Arcaea)
+"""用户 {}{}(Arcaea)
 目前PTT为 {}
 拉取的最后一次游戏数据为：
 {} - {}
