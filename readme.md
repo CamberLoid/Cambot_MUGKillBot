@@ -7,6 +7,14 @@
 Todo: 我还没写完这个bot，成绩的动态记录&更新，token有效期，token本地存储加密，/send的实现
 Todo/Global: CytusII + OCR
 
+0.03beta Notes:
+
+修改 /show 方法 可以查询好友了
+
+设置了缓存,现在单用户的查询将会使用缓存
+
+Bug Fixed
+
 ## 这个bot应该就是大概要正式推出的bot了
 
 还想着上一个杀人bot怎么写，结果想着想着变成了课题记录，晕。（划掉）已经能杀人了

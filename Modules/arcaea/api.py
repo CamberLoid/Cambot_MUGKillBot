@@ -1,9 +1,8 @@
 import requests,requests_oauthlib
-import asyncio,sys,os
+import asyncio,sys,os,json,time
 from pprint import pprint
 from base64 import b64encode,b64decode
 from botCore import jsonHandle
-import json
 arcauth = "https://arcapi.lowiro.com/4/auth/login"
 arcapi = "https://arcapi.lowiro.com/4/user/me"
 props = json.load(open('arc.json',encoding='UTF-8'))
@@ -19,7 +18,9 @@ class Data(object):
         self._auth = auth
         if self._auth is None:
             self._auth = self.getAuth(cred,pswd)
-        raw = self.Datafetch()
+        self._cur = [0,0]
+        self._cur = [time.time(),self.Datafetch(isInit=True)]
+        raw = self._cur[1]
         self._arcid = raw['user_code']
         self._arcdisplay_name = raw['display_name']
         #pprint(self.Datafetch())    
@@ -41,16 +42,22 @@ class Data(object):
             return po.json()['access_token']
         else:
             raise exceptions.invalidCredException()
-    def Datafetch(self):
+    def Datafetch(self,isInit=False):
         """
         普通的拉取数据
         """
+        if time.time() - self._cur[0] < 30 and not isInit:
+            print("Read From Memory")
+            return self._cur[1]
         headers = {}
         headers["authorization"] = "Bearer "+ self._auth
         r=requests.get(arcapi,headers=headers)
         r.raise_for_status()
         if r.json()['success']==False:
             raise exceptions.badAuthException('Auth is Expired')
+        if time.time() - self._cur[0] < 30: t=self._cur[0]
+        else: t=time.time()
+        self._cur = [t,r.json()['value']]
         return r.json()['value']
     def getRecent(self,tgUser=None):
         raw=self.Datafetch()
@@ -69,7 +76,7 @@ Lost:     {}""".format(tgUser,raw['display_name'],raw['rating']/100,props['diffi
     def getFriendRecent(self,friendID=None):
         raw=self.Datafetch()
         for f in raw['friends']:
-            if f['name']==friendID or f['user_id']==friendID:
+            if f['name'].lower()==friendID.lower() or int(f['user_id'])==friendID:
                 recent = f['recent_score'][0]
                 reply = \
 """玩家 {}(Arcaea)(好友关系)
@@ -81,7 +88,7 @@ Pure(+1): {}({})
 Far:      {}
 Lost:     {}""".format(f['name'],f['rating']/100,props['difficulty'][recent['difficulty']],recent['song_id'],recent['score'],recent['perfect_count'],recent['shiny_perfect_count'],recent['near_count'],recent['miss_count'])
                 return reply
-        return "TA还不是你的好友哦，请先加TA为好友"
+        reply = "{}还不是你的好友哦，请先加{}为好友".format(friendID,friendID)
     def getFriendCode(self):
         return self._arcid
     async def listen(self,timeout=1200):

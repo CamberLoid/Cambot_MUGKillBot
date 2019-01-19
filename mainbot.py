@@ -64,12 +64,13 @@ async def register(msg ,*args, **kwargs):
     
     return "**非常重要的信息**\n\n这个bot所使用的api是从lowiro网站上扒下来的\nlowiro官方未公布这个api\n过度使用有各种风险(我也不知道有什么)\n基于MIT协议(口胡)，开发者不对使用bot产生的后果负责\n如理解则请按照下文方法操作：\n1./register basic <your_id> <password>\n2./register bearer <your_auth>\n\n\n本Bot不会保存上述basic方法的id和密码\n当auth过期时请重新执行一遍这个方法"
 
-async def showRecent(msg, *args, **kwargs):
-    usrid = msg['from']['id']
-    reply = None
-    if arc_pool.get(usrid) is not None:
-        d=arc_pool.get(usrid)
-        return d.getRecent(msg['from']['first_name']+' / ')
+async def showRecent(msg, *args, **kwargs): #show
+    usrid,command = msg['from']['id'],msg['text'].split(' ')
+    reply = "哎呀找不到你的信息，记得私聊+/register"
+    if arc_pool.get(usrid) != None: 
+        d = arc_pool.get(usrid)
+        if len(command) == 1: reply =  d.getRecent(msg['from']['first_name']+' / ')       
+        elif len(command) == 2: reply = d.getFriendRecent(command[1])
     else:
         with open("userDatas.json",'r') as f:
             ff=json.load(f)
@@ -77,22 +78,24 @@ async def showRecent(msg, *args, **kwargs):
                 if usrid==i['user_id']:
                     d = arc.api.Data(auth=i['bearer'])
                     arc_pool[usrid] = d
-                    return d.getRecent(msg['from']['first_name']+' / ')
-            return "哎呀找不到你的信息，记得私聊+/register"
-
+                    if len(command) == 1: reply =  d.getRecent(msg['from']['first_name']+' / ')       
+                    elif len(command) == 2: reply = d.getFriendRecent(command[1])
+    return reply
 def about():
     return """这里是 光酱超可爱 Bot(请不要吐槽头像) 基于MIT协议开源
 项目源代码 at https://github.com/CamberLoid/Cambot_MUGKillBot/tree/simple_release, 欢迎各路大佬贡献代码
 
-目前处于alpha测试阶段,只实现了基本功能
-电脑开到六点,六点之后（或者抛出了异常）就会退出
+目前处于beta完善功能阶段
+Bot运行在本机+本机在动车上，缘分上线，挂服务器后不会保留任何数据，还请留意
+
+指令请见下方 [/]
 """
 def start():
     reply = about()
     return reply
 async def msgHandler(msg):
     print(msg['text'])
-    reply = 'lol'
+    reply = '我给你发个吃吧'
     #See https://core.telegram.org/bots/api
     try:
         chatid,msgid,command = \
