@@ -1,5 +1,7 @@
 # Cambot/MUGKillBot.arcaea arcaea自动机
 
+<这个branch已放弃 即将重写>
+
 ## 功能/Todo
 
 这个branch是专门为Arcaea打造的 -> [@HikariissoKawaiiBot](https://t.me/HikariissoKawaiiBot) ,目前正在开发中(请不要吐槽头像)
