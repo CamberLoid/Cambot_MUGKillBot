@@ -1,5 +1,5 @@
 import requests,requests_oauthlib
-import asyncio,sys,os,json,time
+import asyncio,sys,os,json,time,traceback
 from pprint import pprint
 from base64 import b64encode,b64decode
 from botCore import jsonHandle
@@ -22,7 +22,12 @@ class Data(object):
         self._cur = [time.time(),self.Datafetch(isInit=True)]
         raw = self._cur[1]
         self._arcid = raw['user_code']
-        self._arcdisplay_name = raw['display_name']
+        try:
+            self._arcdisplay_name = raw['dispnamelay_name']
+        except KeyError:
+            self._arcdisplay_name = raw['name']
+        except:raise Exception(traceback.format_exc())
+
         #pprint(self.Datafetch())    
     @classmethod
     def getAuth(cls,cred,pswd):
@@ -37,7 +42,10 @@ class Data(object):
               'DeviceId': 'web',
               'AppVersion': 'web'}
         po = requests.post(arcauth,headers=headers)
-        po.raise_for_status()
+        try:
+            po.raise_for_status()
+        except requests.exceptions.HTTPError as e:
+            raise exceptions.invalidCredException()
         if po.json()['success']==True:  
             return po.json()['access_token']
         else:
@@ -89,6 +97,7 @@ Far:      {}
 Lost:     {}""".format(f['name'],f['rating']/100,props['difficulty'][recent['difficulty']],recent['song_id'],recent['score'],recent['perfect_count'],recent['shiny_perfect_count'],recent['near_count'],recent['miss_count'])
                 return reply
         reply = "{}还不是你的好友哦，请先加{}为好友".format(friendID,friendID)
+        return reply
     def getFriendCode(self):
         return self._arcid
     async def listen(self,timeout=1200):
