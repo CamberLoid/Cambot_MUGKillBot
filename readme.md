@@ -1,25 +1,22 @@
-# Cambot/MUGKillBot.arcaea arcaea自动机
+# Cambot/MUGKillBot.Hikari_V2
 
-<这个branch已放弃 即将重写>
+**是船新的api+bot哦** 
 
 ## 功能/Todo
+[@HikariissoKawaiiBot](https://t.me/HikariissoKawaiiBot)大概会到这个Telegram Bot上
 
-这个branch是专门为Arcaea打造的 -> [@HikariissoKawaiiBot](https://t.me/HikariissoKawaiiBot) ,目前正在开发中(请不要吐槽头像)
+正在基于扒的api重写，一时半会儿不会上线
 
 Todo: 我还没写完这个bot，成绩的动态记录&更新，token有效期，token本地存储加密，/send的实现
 Todo/Global: CytusII + OCR
 
-0.03beta Notes:
+0.1 Hikari v2
 
-修改 /show 方法 可以查询好友了
+Todo 高等级API/为Bot服务
 
-设置了缓存,现在单用户的查询将会使用缓存
+Todo 底层API
 
-Bug Fixed
-
-## 这个bot应该就是大概要正式推出的bot了
-
-还想着上一个杀人bot怎么写，结果想着想着变成了课题记录，晕。（划掉）已经能杀人了
+Todo 重写Bot
 
 ## 怎么用呢？
 
@@ -33,6 +30,4 @@ Bug Fixed
 
 ## Docs
 
-### userDatas.json/userDatasExample.json
-
-### botCore
+没有，想多了
