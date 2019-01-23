@@ -1,3 +1,4 @@
 {
-    "python.linting.pylintEnabled": true
+    "python.linting.pylintEnabled": true,
+    "python.pythonPath": "C:\\Users\\duodu\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe"
 }
