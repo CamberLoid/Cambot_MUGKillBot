@@ -10,13 +10,12 @@
 Todo: 我还没写完这个bot，成绩的动态记录&更新，token有效期，token本地存储加密，/send的实现
 Todo/Global: CytusII + OCR
 
-0.1 Hikari v2
-
+```
+0.1 Hikari v2 Notes
 Todo 高等级API/为Bot服务
-
 Todo 底层API
-
 Todo 重写Bot
+```
 
 ## 怎么用呢？
 
