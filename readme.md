@@ -2,6 +2,8 @@
 
 **是船新的api+bot哦** 
 
+但是SSD坏了，还想着把Hikari V2线下测试完再上GitHub，代码全丢了，正在重写
+
 ## 功能/Todo
 [@HikariissoKawaiiBot](https://t.me/HikariissoKawaiiBot)大概会到这个Telegram Bot上
 
