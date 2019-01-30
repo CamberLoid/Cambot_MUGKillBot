@@ -8,7 +8,7 @@
 ---
 [@HikariissoKawaiiBot](https://t.me/HikariissoKawaiiBot)大概会到这个Telegram Bot上
 
-正在基于扒的api重写，一时半会儿不会上线
+正在基于扒的api重写，一时半会儿不会上线，写完了Merge回Master
 
 Todo: 我还没写完这个bot，成绩的动态记录&更新，token有效期，token本地存储加密，/send的实现
 Todo/Global: CytusII + OCR
