@@ -2,7 +2,7 @@
 
 **是船新的api+bot哦** 
 
-~~但是SSD坏了，还想着把Hikari V2线下测试完再上GitHub，代码全丢了，正在重写~~<br>目前正在写隔壁的[Wrapper](github.com/CamberLoid/Hikari), 这个repo一段时间估计不会更新
+~~但是SSD坏了，还想着把Hikari V2线下测试完再上GitHub，代码全丢了，正在重写~~<br>目前正在写隔壁的[Wrapper](https://github.com/CamberLoid/Hikari), 这个repo一段时间估计不会更新
 
 功能/Todo
 ---
