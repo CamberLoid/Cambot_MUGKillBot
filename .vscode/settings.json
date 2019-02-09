@@ -1,4 +1,4 @@
 {
     "python.linting.pylintEnabled": true,
-    "python.pythonPath": "C:\\Users\\duodu\\AppData\\Local\\Microsoft\\WindowsApps\\python.exe"
+    "python.pythonPath": "/usr/bin/python"
 }
