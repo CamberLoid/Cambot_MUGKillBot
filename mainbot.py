@@ -142,7 +142,7 @@ PTT: {}
 @{}
 Pure {}({})
 Far  {}
-Miss {}'''.format(
+Lost {}'''.format(
                 friend['name'],friend['user_code'],
                 friend['rating']/100,
                 Hikari.difficulties[recent['difficulty']],Hikari.song_id.get(recent['song_id'],recent['song_id']),Hikari.clear_type[recent['clear_type']],
